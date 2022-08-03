@@ -1,0 +1,31 @@
+
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>{{ TITLE }}</title>
+  	{% load static %}
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+</head>
+<body>
+	<div id='aside'>
+
+		{%include 'nav_bar.html' %}
+
+	</div><!-- close #aside -->
+				<div id='main'>
+					{% block content %}
+					{% endblock %}
+				</div>
+	</div><!-- close #main -->
+
+	<div id='footer'>
+	  <p>This website's code is <a href='https://github.com/DMarkStorage' target="_blank">
+	     hosted on GitHub</a>.<br />
+	     Patches and suggestions are welcome.</p>
+	</div><!-- close #footer -->
+</body>
+</html>
