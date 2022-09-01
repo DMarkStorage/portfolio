@@ -13,3 +13,9 @@ def Projects(request):
 
 def Contact(request):
 	return render(request, 'Contact.html')
+
+def Vault(request):
+	return render(request, 'vault.html')
+
+def Netapp(request):
+	return render(request, 'netapp.html')

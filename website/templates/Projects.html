@@ -6,7 +6,7 @@
 {% block content %}
 </br>
 
-<h1>Recent Projects</h1>
+<h1>Documentation</h1>
 </br>
 
 <p>Development primarily takes place on <a href="https://github.com/DMarkStorage" target="_blank">
@@ -18,55 +18,24 @@
 </a>
  ().</p>
 
-<h2 style="text-transform:uppercase;">
-	<a href="https://github.com/DMarkStorage/zfsdisktray" target="_blank">
-		zfsdisktray
-	</a>
-	<hr size="1" width="30%" color="#BFBFBF" align="left">  
-</h2>
-<p>
-	This program requests data from ZFS Storage appliance this program prints out disk tray information.
-</p>
 
-<h2 style="text-transform:uppercase;">
-	<a href="https://github.com/DMarkStorage/zfsdisktray" target="_blank">
-		ZFS Appliance Hardware
-	</a>
-	<hr size="1" width="30%" color="#BFBFBF" align="left">  
-</h2>
-<p>
-	Simple Programs that Uses API to get Details from Oracle zfs appliance hardware
-</p>
+ <br>
+<ul>
+	<li style="text-transform:uppercase;">
+		<a href="{% url 'Vault'%}">
+			Vault
+		</a>
+	</li>
+	<li style="text-transform:uppercase;">
+		<a href="{% url 'Netapp'%}">
+			NetApp
+		</a>
+	</li>
+</ul>
 
-<h2 style="text-transform:uppercase;">
-	<a href="https://github.com/DMarkStorage/ZFS_Snapshots" target="_blank">
-		ZFS Snapshots
-	</a>
-	<hr size="1" width="30%" color="#BFBFBF" align="left">  
-</h2>
-<p>
-	ZFS_Snapshot is a simple program that CREATE, LIST, and DELETE ZFS snapshots in a specific Zfs storage filesystem
-</p>
 
-<h2 style="text-transform:uppercase;">
-	<a href="https://github.com/DMarkStorage/NetApp_StorageVM" target="_blank">
-		NetApp StorageVM
-	</a>
-	<hr size="1" width="30%" color="#BFBFBF" align="left">  
-</h2>
-<p>
-	Python program that connects to NetApp server using RestAPI, lets user create, 
-	remove and get the details of a Storage VM from NetApp server.
-</p>
 
-<h2 style="text-transform:uppercase;">
-	<a href="https://github.com/DMarkStorage/NetApp_Volume" target="_blank">
-		NetApp Create Volume
-	</a>
-	<hr size="1" width="30%" color="#BFBFBF" align="left">  
-</h2>
-<p>
-	Python program that connects to NetApp server using RestAPI, lets user create volume into a specific Storage VM from NetApp server
-</p>
+
+
 
 {% endblock %}

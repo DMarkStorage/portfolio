@@ -26,7 +26,10 @@ urlpatterns = [
     path('',views.index, name="index"),
     path('about',views.About, name="About"),
     path('projects',views.Projects, name="Projects"),
-    path('contact',views.Contact, name="Contact")
+    path('contact',views.Contact, name="Contact"),
+    path('vault',views.Vault, name="Vault"),
+    path('netapp',views.Netapp, name="Netapp"),
+
 
 ]
  
