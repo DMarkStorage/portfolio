@@ -47,6 +47,98 @@ h1, h2, h3 {
   margin: 0;
 }
 
+.dark_part
+{
+  height:30px;
+  width:150px;
+  border-radius:8px;
+  padding:10px;
+  font-size:20px;
+  font-family: 'Oswald', sans-serif;
+  height:52px;
+  cursor:pointer;
+  background-color:wheat;
+
+}
+
+.container_{
+  border-radius: 3px;
+  background: #201300;
+  padding: 0.3em;
+  font-size: 1em;
+  line-height: 1.63em;
+  margin-top: auto;
+  margin-bottom: 1.1em;
+
+
+
+}
+
+.container_-overflow-scroll{
+  overflow-x: scroll;
+  word-wrap: normal!important;
+}
+
+.light_text{
+  color: #a6a6a6;
+}
+
+button{
+ 
+   padding:0;
+}
+
+.style_copyButtonContainer__H7t5c {
+  padding: .35em;
+  padding-right: 1.50em;
+  position: absolute;
+  z-index: 1;
+}
+
+.style_button{
+  display: flex;
+  border-radius: 3px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+div.enlighter>div:AFTER {
+  content: ' ';
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+.enlighter-k1{
+  color: #8be9fd;
+  font-weight: 700;
+}
+
+.enlighter-g1 {
+    color: #f8f8f2;
+    font-weight: 700;
+}
+
+.enlighter-n1 {
+  color: #bd93f9;
+}
+
+.enlighter-t-dracula .enlighter-m0 {
+  color: #8be9fd;
+}
+
+.enlighter-s0 {
+  color: #f1fa8c;
+}
+
+.enlighter-c0 {
+  color: #6272a4;
+}
+
+.enlighter-m3 {
+  color: #8be9fd;
+}
 #main a:hover {
   color: #DE942E;
 }
@@ -129,3 +221,4 @@ h1, h2, h3 {
     margin-left: 0;
   }
 }
+
