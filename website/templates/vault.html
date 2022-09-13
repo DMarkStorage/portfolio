@@ -37,20 +37,45 @@ Copy the binary to your system. If you intend to access it from the command-line
 Refer to the HashiCorp Tutorials to start a server, put your first secret, and use other features of Vault.
 </p>
 
+<h4>1. To install vault, find the appropriate packe for your system and download it.</h4>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/kyel7n6rd6d2knq/donwload1.jpg?dl=0" type="text/css" alt="Vault download page" class="img-size">
+        <figcaption id="figcaption"> Download Vault</figcaption>
+    </figure>
+</div>
+<h4>2. After downloading the file, Unzip the file/package.</h4>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/87rdj4wgjrhcam7/download2.jpg?dl=0" type="text/css" alt="Downloaded vault on zip" class="img-size">
+        <figcaption id="figcaption"> Successful download</i></figcaption>
+    </figure>
+</div>
+<h4>3. Now you can install open <b><i>vault.exe</i></b></h4>
+<h4>4. After installing vault, make sure to add it on your <i>PATH</i>. See this page on how to set <i>PATH for <a href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux" target="_blank">linux and MAC</a></i>. For <a href="https://stackoverflow.com/questions/1618280/where-can-i-set-path-to-make-exe-on-windows" target="_blank" rel="noopener noreferrer"><i>windows</i></a> see this page</h4>
+
+
 <h3>
     Start Vault Developer mode
 </h3>
+
+<p style="font-size:18px">You can start Vault as a server in "dev" mode like so: <code>vault server -dev</code>.
+    This dev-mode server requires no further setup, and your local <code>vault</code> CLI will
+    be authenticated to talk to it. This makes it easy to experiment with Vault or
+    start a Vault instance for development. Every feature of Vault is available in
+    "dev" mode. The <code>-dev</code> flag just short-circuits a lot of setup to insecure
+    defaults.</p>
 <br>
 <div class="container_ ">
     <code>
         <div>$ <span class="light_text">vault server -dev</span></div> 
     </code>
-    <!-- <button class="style_button style_copyButtonContainer__H7t5c"> Copy</button> -->
 </div>
 
 <h4>Output: </h4>
 
-<div class="container_ container_-overflow-scroll">
+<div class="container_ ">
+    <div class="container_-overflow-scroll">
     <code>
         <div><span class="light_text">==> Vault server configuration:</span></div>
         <br>
@@ -236,6 +261,172 @@ Refer to the HashiCorp Tutorials to start a server, put your first secret, and u
             </div>
         </div>
     </code>
-
 </div>
+</div>
+
+<p style="font-size:18px">The dev server is a built-in, pre-configured server that is not very secure but useful for playing with Vault locally.</p>
+
+<h4>Adding Server Details in your PATH:</h4>
+
+<p style="font-size:18px">Open new terminal and make sure to have a copy of your <i><b>unseal key</b></i> and <i><b>root token</b></i> because in -dev mode it will change everytime you restart the server </p>
+
+<h3>CMD:</h3>
+<br>
+<div class="container_ ">
+    <code>
+        <div class="">
+            <div>
+                <span class="light-text">$ export VAULT_ADDR=</span>
+                <span class="enlighter-s0">'http://127.0.0.1:8200'</span>
+            </div>
+        </div>
+    </code>
+</div>
+
+<div class="container_ ">
+    <code>
+        <div class="">
+            <div>
+                <span class="light-text">$ export VAULT_TOKEN=</span>
+                <span class="enlighter-s0">'s.PrJcwT6kkUfG3kJdfhenoN9a'</span>
+            </div>
+        </div>
+    </code>
+</div>
+
+<h3>Powershell:</h3>
+<br>
+<div class="container_ ">
+    <code>
+        <div class="">
+            <div>
+                <span class="light-text">$env:VAULT_ADDR=</span>
+                <span class="enlighter-s0">"http://127.0.0.1:8200"</span>
+            </div>
+        </div>
+
+    </code>
+</div>
+
+<div class="container_ ">
+    <code>
+        <div class="">
+            <div>
+                <span class="light-text">$env:VAULT_TOKEN=</span>
+                <span class="enlighter-s0">"s.PrJcwT6kkUfG3kJdfhenoN9a"</span>
+            </div>
+        </div>
+    </code>
+</div>
+
+<p style="font-size:18px">When running Vault in&nbsp;<em>dev</em>&nbsp;mode,&nbsp;<a href="https://www.vaultproject.io/docs/secrets/kv/kv-v2" target="_blank">Key/Value v2 secrets engine</a>&nbsp;is enabled at&nbsp;<code>secret/</code>&nbsp;path. Key/Value secrets engine is a generic key-value store used to store arbitrary secrets within the configured physical storage for Vault. Secrets written to Vault are encrypted and then written to backend storage. Therefore, the backend storage mechanism&nbsp;<em>never</em>&nbsp;sees the unencrypted value and doesn’t have the means necessary to decrypt it without Vault</p>
+<h3>Accessing Vault:</h3>
+
+<p style="font-size:18px">Vault provides multiple mechanisms like UI, Cli and API to store/get the secrets.</p>
+
+<p style="font-size:18px">To access the UI, open <code>https://127.0.0.1:8200</code> in your browser.</p>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/6utt01t4hgsrjdr/login.JPG?dl=0" alt="Login page" class="img-size">
+        <figcaption id="figcaption"> Login screen using token</figcaption>
+    </figure>
+</div>
+<i>
+    <p>Login using the <code>root token</code> given</p>
+</i>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/vdd9lzt074o4cek/secrets.JPG?dl=0" type="text/css" alt="Login page" class="img-size">
+        <figcaption id="figcaption"> Vault secret engine in <i>dev mode</i></figcaption>
+    </figure>
+</div>
+
+<h2>Creating a secret to kv using python</h2>
+<p>Try to store secret using python.<br> <i>"Development mode server stores all secrets in-memory, the moment the server restart or end all the secrets are deleted."</i></p>
+
+<p>In this example, we will use HVAC to interact with the vault server</p>
+<h3>Install HVAC:</h3>
+<br>
+<div class="container_ ">
+    <code>
+        <div>$ <span class="light_text">pip install hvac</span></div> 
+    </code>
+</div>
+
+<h4>Connect to server</h4>
+
+<div class="container_ ">
+    <div class="">
+        <div class="">
+            <div>
+                <span class="enlighter-k0">import</span>
+                <span class="enlighter-k2"> hvac</span>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="light-text">&nbsp;</span>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="light-text">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="enlighter-k0">def</span>
+                <span class="enlighter-text">&nbsp;</span>
+                <span class="enlighter-k3">init_server</span>
+                <span class="enlighter-k2">()</span>
+                <span class="light-text">:</span>
+            </div>
+        </div>
+        <div class=""><div>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">&nbsp;&nbsp;&nbsp;&nbsp;client</span>
+            <span class="enlighter-k3">=</span>
+            <span class="enlighter-k2">hvac.Client</span>
+            <span class="enlighter-k4">(</span>
+            <span class="enlighter-k4">url</span>
+            <span class="enlighter-k3"> = </span>
+            <span class="enlighter-s0">'http://localhost:8200'</span>
+            <span class="enlighter-k4">)</span><span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k3">&nbsp;&nbsp;&nbsp;&nbsp;print</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">client</span>
+            <span class="light-text">.</span>
+            <span class="enlighter-k4">sys</span>
+            <span class="light-text">.</span>
+            <span class="enlighter-k3">is_initialized</span>
+            <span class="enlighter-k0">()</span>
+            <span class="enlighter-k2">)</span>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class=""><div>
+        <span class="enlighter-text">&nbsp;</span>
+    </div>
+</div>
+<div class="">
+    <div>
+        <span class="light-text"></span>
+        <span class="enlighter-k3">init_server</span>
+        <span class="enlighter-k2">()</span>
+        <span class="enlighter-text"></span>
+    </div>
+</div>
+</div>
+</div>
+<h4>Output:</h4>
+<div class="container_ ">
+    <code>
+        <div><span class="light_text">True</span></div> 
+    </code>
+</div>
+
 {% endblock %}

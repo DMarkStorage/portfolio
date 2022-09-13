@@ -69,13 +69,14 @@ h1, h2, h3 {
   line-height: 1.63em;
   margin-top: auto;
   margin-bottom: 1.1em;
-
+  width: 650px;
+  text-align:inherit;
 
 
 }
 
 .container_-overflow-scroll{
-  overflow-x: scroll;
+  overflow-x: auto;
   word-wrap: normal!important;
 }
 
@@ -110,6 +111,22 @@ div.enlighter>div:AFTER {
   box-sizing: inherit;
 }
 
+.enlighter-k0{
+  color: #8202ad;
+
+}
+.enlighter-k2{
+  color: #DE942E;
+
+}
+.enlighter-k4{
+  color: #c93939;
+
+}
+.enlighter-k3{
+  color: #58bef5;
+
+}
 .enlighter-k1{
   color: #8be9fd;
   font-weight: 700;
@@ -129,7 +146,7 @@ div.enlighter>div:AFTER {
 }
 
 .enlighter-s0 {
-  color: #f1fa8c;
+  color: #19ac2d;
 }
 
 .enlighter-c0 {
@@ -138,6 +155,31 @@ div.enlighter>div:AFTER {
 
 .enlighter-m3 {
   color: #8be9fd;
+}
+
+
+/* image */
+.wp-block-image {
+  margin: 0 0 1em;
+}
+
+#page .aligncenter {
+    clear: both;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-block-image .aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-size{
+  width: 700px;
+}
+#figcaption{
+  text-align: center;
 }
 #main a:hover {
   color: #DE942E;
