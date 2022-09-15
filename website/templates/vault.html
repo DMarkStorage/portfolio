@@ -566,7 +566,7 @@
             <span class="enlighter-k4">&emsp;&ensp;&ensp;&nbsp;create_secret</span>
             <span class="enlighter-k3">=</span>
             <span class="enlighter-k2">client</span>
-            <span class="light-text">secrets.kv.v2.</span>
+            <span class="light-text">.secrets.kv.v2.</span>
             <span class="enlighter-k3">create_or_update_secret</span>
             <span class="enlighter-k2">(</span>
             <span class="enlighter-k4">path</span>
@@ -684,4 +684,185 @@
             <span class="light_text">}</span>
         </div> 
 </div>
+
+<div class="text-style p2">
+    <span>
+        You can verify the secrets that you created using CLI/UI. The secret that was created is stored in <a href="http://127.0.0.1:8200/ui/vault/secrets/secret/show/demo" target="_blank"> secret/show/demo</a> 
+    </span>
+</div>
+<div class="text-style p2">
+    <span>
+       <h4>Check Secret on UI</h4>
+    </span>
+</div>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/e5kpl8ql6tvkckb/created%20secret.jpg?dl=0" type="text/css" alt="help output" class="img-size">
+        <figcaption id="figcaption"> Secret created</i></figcaption>
+    </figure>
+</div>
+
+<div class="text-style p2">
+    <span>
+       <h4>Check Secret using Cli</h4>
+    </span>
+</div>
+<div class="container_ ">
+    <div class="">
+        <div class="">
+            <div>
+                <span class="enlighter-k0">import</span>
+                <span class="enlighter-k2"> hvac</span>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="light-text">&nbsp;</span>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="light-text">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class="enlighter-k0">def</span>
+                <span class="enlighter-text">&nbsp;</span>
+                <span class="enlighter-k3">init_server</span>
+                <span class="enlighter-k2">()</span>
+                <span class="light-text">:</span>
+            </div>
+        </div>
+        <div class=""><div>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">&emsp;&ensp;&ensp;&nbsp;client</span>
+            <span class="enlighter-k3">=</span>
+            <span class="enlighter-k2">hvac.Client</span>
+            <span class="enlighter-k4">(</span>
+            <span class="enlighter-k4">url</span>
+            <span class="enlighter-k3"> = </span>
+            <span class="enlighter-s0">'http://localhost:8200'</span>
+            <span class="enlighter-k4">)</span><span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k3">&emsp;&ensp;&ensp;&nbsp;show_secret</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">client</span>
+            <span class="enlighter-k2">)</span>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <br>
+
+    <div class="">
+        <div>
+            <span class="light-text">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span class="enlighter-k0">def</span>
+            <span class="enlighter-text">&nbsp;</span>
+            <span class="enlighter-k3">show_secret</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">client</span>
+            <span class="enlighter-k2">)</span>
+            <span class="light-text">:</span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">&emsp;&ensp;&ensp;&nbsp;response</span>
+            <span class="enlighter-k3">=</span>
+            <span class="enlighter-k2">client</span>
+            <span class="light-text">.secrets.kv.v2.</span>
+            <span class="enlighter-k3">read_secret_version</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">path</span>
+            <span class="enlighter-k3"> = </span>
+            <span class="enlighter-s0">'demo'</span>
+            <span class="enlighter-k2">)</span>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k3">&emsp;&ensp;&ensp;&nbsp;print</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">response</span>
+            <span class="enlighter-k2">[</span>
+            <span class="enlighter-s0">'</span>
+            <span class="enlighter-s0">data</span>
+            <span class="enlighter-s0">'</span>
+            <span class="enlighter-k2">]</span>
+            <span class="enlighter-k2">[</span>
+            <span class="enlighter-s0">'</span>
+            <span class="enlighter-s0">data</span>
+            <span class="enlighter-s0">'</span>
+            <span class="enlighter-k2">]</span>
+            <span class="enlighter-k2">)</span>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+    <div class=""><div>
+        <span class="enlighter-text">&nbsp;</span>
+    </div>
+</div>
+<div class="">
+    <div>
+        <span class="light-text"></span>
+        <span class="enlighter-k3">init_server</span>
+        <span class="enlighter-k2">()</span>
+        <span class="enlighter-text"></span>
+    </div>
+</div>
+</div>
+</div>
+<h4>Output:</h4>
+<div class="container_ ">
+    <div class="">
+        <div class="">
+            <div>
+                <span class="enlighter-k0">{</span>
+   
+            </div>
+            <div>
+                <span class="enlighter-s0">&emsp;&ensp;&ensp;&nbsp;</span>
+                <span class="enlighter-s0">'password':'pasword123'</span>
+                <span class="light_text">,</span>
+            </div>
+            <div>
+                <span class="enlighter-s0">&emsp;&ensp;&ensp;&nbsp;</span>
+                <span class="enlighter-s0">'user':'root'</span>
+            </div>
+            <div>  
+                <span class="enlighter-k0">}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-style p2">
+    <span>
+        The response shows the key and the value of the secret created
+    </span>
+</div>
+<br>
+<h2>Vault ohter functionality</h2>
+<div class="text-style p2">
+    <span>
+        The functionality of Vault is not limited to just key / value secret engines. 
+        Some secrets engines like the key/value secrets engine simply store and read data. Other 
+        secrets engines connect to other services and generate dynamic credentials on demand. 
+        Other secrets engines provide encryption as a service.
+    </span><br>
+    <br>
+    <span>To learn more about it, explore the links in the references section.</span>
+</div>
+<br>
+<h2>References</h2>
+<ul>
+    <li><a href="https://learn.hashicorp.com/tutorials/vault/getting-started-first-secret" target="_blank">getting started first secret</a></li>
+    <li><a href="https://www.vaultproject.io/docs/concepts/dev-server" target="_blank"><code>'Dev'</code>server mode</a></li>
+    <li><a href="https://hvac.readthedocs.io/en/stable/index.html" target="_blank">HVAC Documentation</a></li>
+    <li><a href="https://github.com/hvac/hvac" target="_blank">HVAC / HashiCorp Vault</a></li>
+</ul>
 {% endblock %}
