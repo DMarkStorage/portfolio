@@ -49,6 +49,295 @@
 </h3>
 <div class="text-size p2">
     <span>
+		You can access the ONTAP API using any of several different programming languages and tools. Popular choices include Python, Java, Curl, and PowerShell.
+		 A program, script, or tool that uses the API acts as a REST web services client.
+		  Using a programming language enables a deeper understanding of the API and provides an opportunity 
+		  to automate the ONTAP administration.
+		  <br><br>
+		  In this process, It will use python programming language and Basic authentication must be set with the user name and password encoded as a base64 string. 
     </span>
+</div>
+<br>
+<!-- show how to use base64 -->
+<h3>Python request basic authorization base64 code example</h3>
+<div class="text-size p2">
+    <span>
+		The API expects the authorization header. This example shows the format of the authorization headers 
+		using the basic authentication base64 encoding.
+    </span>
+</div>
+<!-- base64 script -->
+<div class="container_ ">
+    <div class="">
+
+
+			<div>
+                <span class="enlighter-k4">user_pass</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-k4">username</span>
+                <span class="enlighter-k3">+</span>
+                <span class="enlighter-s0">" : "</span>
+                <span class="enlighter-k3">+</span>
+                <span class="enlighter-k4">password</span>
+            </div>
+			<div>
+                <span class="enlighter-k4">encoded_u</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-k2">base64</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">b64encode</span>
+                <span class="enlighter-k2">( </span>
+                <span class="enlighter-k4">user_pass</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">encode</span>
+                <span class="enlighter-k0">( )</span>
+                <span class="enlighter-k2"> )</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">decode</span>
+                <span class="enlighter-k2">( )</span>
+
+            </div>
+        </div>
+        <div class=""><div>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+	<br>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">headers</span>
+            <span class="enlighter-k3">=</span>
+            <span class="enlighter-k2">{</span>
+            <span class="enlighter-s0">"Authorization" : "Basic</span>
+            <span class="enlighter-k2">%s</span>
+            <span class="enlighter-s0"> " </span>
+            <span class="enlighter-k3">%</span>
+            <span class="enlighter-k4">encoded_u</span>
+            <span class="enlighter-k2">}</span>
+
+        </div>
+    </div>
+
+</div>
+
+
+<br>
+
+<h3>
+    Retrieving cluster software version
+</h3>
+<div class="text-size p2">
+    <span>
+		To start using ontap API, we can start by implementing this simple program that shows the cluster software version on your machine.
+    </span>
+</div>
+
+<h4>Get the cluster version using python and base64 authorization</h4>
+<!-- Script on getting the version of ontap -->
+<div class="container_ ">
+    <div class="">
+        <div class="">
+            <div>
+                <span class="enlighter-k0">import</span>
+                <span class="enlighter-k2"> request, base64</span>
+
+            </div>
+			<div>
+                <span class="enlighter-k2">requests</span>
+                <span class="light-text"> .packages.urllib3.</span>
+                <span class="enlighter-k3"> disable_warnings</span>
+                <span class="enlighter-k2">( )</span>
+
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="light-text">&nbsp;</span>
+            </div>
+        </div>
+        <div class="">
+            <div>
+                <span class="enlighter-k4">username</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-s0">"admin"</span>
+            </div>
+			<div>
+                <span class="enlighter-k4">password</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-s0">"passwrd"</span>
+            </div>
+			<div>
+                <span class="enlighter-k4">user_pass</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-k4">username</span>
+                <span class="enlighter-k3">+</span>
+                <span class="enlighter-s0">" : "</span>
+                <span class="enlighter-k3">+</span>
+                <span class="enlighter-k4">password</span>
+            </div>
+			<div>
+                <span class="enlighter-k4">encoded_u</span>
+                <span class="enlighter-k3">=</span>
+                <span class="enlighter-k2">base64</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">b64encode</span>
+                <span class="enlighter-k2">( </span>
+                <span class="enlighter-k4">user_pass</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">encode</span>
+                <span class="enlighter-k0">( )</span>
+                <span class="enlighter-k2"> )</span>
+                <span class="light-text">.</span>
+                <span class="enlighter-k3">decode</span>
+                <span class="enlighter-k2">( )</span>
+
+            </div>
+        </div>
+        <div class=""><div>
+            <span class="enlighter-text"></span>
+        </div>
+    </div>
+	<br>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">headers</span>
+            <span class="enlighter-k3">=</span>
+            <span class="enlighter-k2">{</span>
+            <span class="enlighter-s0">"Authorization" : "Basic</span>
+            <span class="enlighter-k2">%s</span>
+            <span class="enlighter-s0"> " </span>
+            <span class="enlighter-k3">%</span>
+            <span class="enlighter-k4">encoded_u</span>
+            <span class="enlighter-k2">}</span>
+
+        </div>
+    </div>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">resp</span>
+            <span class="enlighter-k2">=</span>
+            <span class="enlighter-k2">requests</span>
+            <span class="light-text">.</span>
+            <span class="enlighter-k3">get</span>
+            <span class="enlighter-k2">(</span>
+            <span class="enlighter-k4">'https://192.168.1.123/api/cluster?fields=version'</span>
+            <span class="light-text">,</span>
+				<div>
+					<span class="enlighter-k3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="enlighter-k3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="enlighter-k3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+					<span class="enlighter-k4">verify</span>
+					<span class="enlighter-k3">=</span>
+					<span class="enlighter-k2">False</span>
+					<span class="light-text">,</span>
+					<span class="enlighter-k4">headers</span>
+					<span class="enlighter-k3">=</span>
+					<span class="enlighter-k4">headers</span>
+					<span class="enlighter-k2">)</span>
+				</div>
+
+        </div>
+    </div>
+
+<div class="">
+    <div>
+        <span class="light-text"></span>
+        <span class="enlighter-k3">print</span>
+        <span class="enlighter-k2">(</span>
+        <span class="enlighter-k4">resp.text</span>
+        <span class="enlighter-k2">)</span>
+
+    </div>
+</div>
+</div>
+</div>
+<h4>OUTPUT:</h4>
+<div class="container_ ">
+    <div class="">
+			<div>
+                <span class="enlighter-k2">{</span>
+
+            </div>
+			<div>                
+				<span class="enlighter-k3">&ensp;&ensp;</span>
+                <span class="enlighter-s0">"version"</span>
+                <span class="light-text">:</span>
+                <span class="enlighter-k0">{</span>
+            </div>
+        </div>
+        <div class="">
+			<div>
+				<span class="enlighter-k3">&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+				<span class="enlighter-s0">"full"</span>
+				<span class="light-text">:</span>
+				<span class="enlighter-s0">"NetApp Release 9.10.1: Sat Jan 15 10:49:44 UTC 2022"</span>
+				<span class="light-text">,</span>
+       		</div>
+			<div>
+				<span class="enlighter-k3">&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+				<span class="enlighter-s0">"generation"</span>
+				<span class="light-text">: </span>
+				<span class="enlighter-k2">9 </span>
+				<span class="light-text">,</span>
+       		</div>
+			<div>
+				<span class="enlighter-k3">&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+				<span class="enlighter-s0">"major"</span>
+				<span class="light-text">: </span>
+				<span class="enlighter-k2">10 </span>
+				<span class="light-text">,</span>
+       		</div>
+			<div>
+				<span class="enlighter-k3">&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+				<span class="enlighter-s0">"minor"</span>
+				<span class="light-text">: </span>
+				<span class="enlighter-k2">1 </span>
+				<span class="light-text"></span>
+       		</div>
+			<div>
+				<span class="enlighter-k3">&ensp;</span>
+
+				<span class="enlighter-k0">}</span>
+				<span class="light-text">,</span>
+
+       		</div>
+    	</div>
+    <div class="">
+        <div>
+            <span class="enlighter-k4">&ensp;&ensp;</span>
+            <span class="enlighter-s0">"_links"</span>
+            <span class="light-text">:</span>
+            <span class="enlighter-k0">{</span>
+        </div>
+		<div>
+            <span class="enlighter-k4">&ensp;&ensp;&ensp;&ensp;</span>
+            <span class="enlighter-s0">"self"</span>
+            <span class="light-text">:</span>
+            <span class="enlighter-k3">{</span>
+        </div>
+		<div>
+            <span class="enlighter-k4">&ensp;&ensp;&ensp;&ensp;&ensp;</span>
+            <span class="enlighter-s0">"href"</span>
+            <span class="light-text">:</span>
+            <span class="enlighter-s0">"/api/cluster"</span>
+        </div>
+		<div>
+            <span class="enlighter-k4">&ensp;&ensp;&ensp;&ensp;</span>
+            <span class="enlighter-k3">}</span>
+
+        </div>
+		<div>
+            <span class="enlighter-k4">&ensp;&ensp;&ensp;</span>
+            <span class="enlighter-k0">}</span>
+
+        </div>
+		<div>
+            <span class="enlighter-k4"></span>
+            <span class="enlighter-k2">}</span>
+
+        </div>
+    </div>
+
 </div>
 {% endblock %}
