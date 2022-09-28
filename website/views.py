@@ -19,3 +19,6 @@ def Vault(request):
 
 def Netapp(request):
 	return render(request, 'netapp.html')
+
+def CRUD(request):
+	return render(request, 'CRUD.html')

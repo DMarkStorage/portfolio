@@ -1,0 +1,68 @@
+{%extends 'base.html' %}
+{% load static %}
+
+{% block title %}CRUD{% endblock %}
+
+{% block content %}
+</br>
+
+<h1>CRUD on NETAPP/ONTAP Snapshots</h1>
+<br>
+<h2>Lets create CRUD operations on Netapp snapshots</h2>
+
+<br>
+<h2>What are CRUD operations?</h2>
+<div class="text-style p2">
+    <span>
+        CRUD is an acronym that stands for CREATE, READ, UPDATE, and DELETE. 
+        These four commands are the foundation of CRUD. 
+        This acronym is well-known among programmers, but many software developers view it as more of guidance 
+        since CRUD was not made as a modern way to create API. After all, 
+        its origins are in the database. By its definition, 
+        it’s more of a cycle than an architectural system.
+    </span>
+</div>
+
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/37j3uezy170wl5n/1_bjb9DuFJclPT6KL0alwq-w.png?dl=0" alt="CRUD meaning " class="img-size">
+        <figcaption id="figcaption">CRUD Operations</figcaption>
+    </figure>
+</div>
+<h2>How create a Snapshot</h2>
+<div class="text-style p2">
+    <span>
+        To create a snapshot use <code style="color: green;"><b>POST</b></code> and this url:
+        <br>
+        <code><b>/storage/volumes/{volume.uuid}/snapshots</b></code>
+    </span>
+</div>
+<h3>required properties</h3>
+<div class="text-style p2">
+    <span>
+        <code style="color:red">name</code>
+         - Name of the Snapshot copy to be created.
+    </span>
+</div>
+<h3>Optional properties</h3>
+
+<div class="text-style p2">
+    <span>
+        <code style="color:orange">comment</code>
+         - Comment associated with the Snapshot copy.
+    </span>
+</div>
+<div class="text-style p2">
+    <span>
+        <code style="color:orange">expiry_time</code>
+         - Snapshot copies with an expiry time set are not allowed to be deleted until the retention time is reached.
+    </span>
+</div>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/67lhbl7ezq6qfpl/create.JPG?dl=0" alt="CRUD meaning " class="img-size">
+        <figcaption id="figcaption">CREATE snapshot</figcaption>
+    </figure>
+</div>
+{% endblock %}
+

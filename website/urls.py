@@ -29,6 +29,8 @@ urlpatterns = [
     path('contact',views.Contact, name="Contact"),
     path('vault',views.Vault, name="Vault"),
     path('netapp',views.Netapp, name="Netapp"),
+    path('CRUD',views.CRUD, name="CRUD"),
+
 
 
 ]
