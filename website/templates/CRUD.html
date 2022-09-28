@@ -64,5 +64,46 @@
         <figcaption id="figcaption">CREATE snapshot</figcaption>
     </figure>
 </div>
-{% endblock %}
 
+<h2>How to get Snapshot details</h2>
+<div class="text-style p2">
+    <span>
+        To create a snapshot use <code style="color: blue;"><b>GET</b></code> and this url:
+        <br>
+        <code><b>/storage/volumes/{volume.uuid}/snapshots/{uuid}</b></code>
+    </span>
+</div>
+<h3>required properties</h3>
+<div class="text-style p2">
+    <span>
+        <code style="color:red">Volume UUID</code>
+         - UUID of the Volume where snapshot is.
+    </span>
+</div>
+<div class="text-style p2">
+    <span>
+        <code style="color:red">Snapshot UUID</code>
+         - UUID of the snapshot.
+    </span>
+</div>
+
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/bka6kfx2zovww83/get_snap.JPG?dl=0" alt="GET command" class="img-size">
+        <figcaption id="figcaption">Get a snapshot details</figcaption>
+    </figure>
+</div>
+<h4>OUTPUT:</h4>
+<div class="wp-block-image">
+    <figure class="aligncenter">
+        <img src="http://dl.dropboxusercontent.com/s/rze5izrwhafg4pj/get_snap_output.JPG?dl=0" alt="GET command output" class="img-size">
+        <figcaption id="figcaption">snapshot details</figcaption>
+    </figure>
+</div>
+<div class="text-style p2">
+    <span>
+        The result above are similar but the one on the table is the semplified version of the json output above.
+        To see the implementation visit our git repository. <a href="https://github.com/DMarkStorage/Netapp_snapshot/blob/main/snapshot_ops.py" target="_blank" rel="noopener noreferrer">(GITHUB)</a>
+    </span>
+</div>
+{% endblock %}
