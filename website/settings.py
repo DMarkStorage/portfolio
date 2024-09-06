@@ -24,7 +24,7 @@ PROJECT_DIR = os.path.join(BASE_DIR, "website")
 SECRET_KEY = 'django-insecure-(fkwl=@3))w4f*s1lrl3scc&-hm+h!892=!a)_73m1-cb=-@5m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 
 ALLOWED_HOSTS = ['*']
 
@@ -130,3 +130,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = 'static/'
