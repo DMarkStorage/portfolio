@@ -9,7 +9,7 @@ PROJECT_BASE_PATH='/usr/local/apps/mysite'
 
 echo "Installing dependencies..."
 sudo yum update
-sudo yum install -y python3 python3-venv python3-devel  sqlite python-pip supervisor nginx git
+sudo yum install -y python3 python3-venv python3-devel  sqlite python-pip supervisor nginx git --skip-broken
 
 # Create project directory
 mkdir -p $PROJECT_BASE_PATH
